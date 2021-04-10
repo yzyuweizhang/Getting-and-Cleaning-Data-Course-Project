@@ -1,0 +1,28 @@
+The run_analysis performs the data preparation as described in the README. 
+
+1. Read in data from "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip". 
+
+2. Inital Merge 
+- X_test_train is created from rbind of X_test and X_train 
+- Y_test_train is created from rbind of Y_test and Y_train 
+- Subject_test_train is created from rbind of subject_test and subject_train 
+
+3. colnames on Data
+-colnames of X_test_train is transversed with t() function from column 2 of features 
+-colnames of Y_test_train is named "Activty" 
+-colnames of Subject_test_train is named "Subject"
+
+4. Final Merge of all files 
+-all three files are merged with cbind into Data 
+
+5. Isolates the Std and Mean Columns 
+- Mean/Std were isolated with grep and named MeanSTDTable 
+
+6. Assigning Names to the Activities 
+-the number values from the Activity column were replaced with the corresponding activity from the second column 
+
+7. Reformatting Names 
+- Short form of names were restructed to the full names with gsub 
+
+8. Average of Subjects and Activities were calculate and written into ao new table 
+
