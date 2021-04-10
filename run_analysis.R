@@ -20,11 +20,12 @@ colnames(Subject_test_train) <- "Subject"
 
 Data <- cbind(X_test_train, Y_test_train, Subject_test_train) 
 
+#Identifiying columns with STD and Mean 
 MeanSTD <- grep("[Mm]ean|[Ss]td", names(Data), ignore.case=TRUE) #Column no. with Std or Mean 
 AddSubjectAcivity<- c(MeanSTD, 562, 563)
 MeanSTDTable <- Data[,AddSubjectAcivity]
 
-#Assinging Name to Activity 
+#Assigning the Name to Activity 
 MeanSTDTable$Activity <- activity_labels[MeanSTDTable$Activity, 2]
 
 #Reformating Names 
